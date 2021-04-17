@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.0'
 
 #commands
+# Heroku comit milestone
 # cd /root/{YOURPOJECTNAME}
 # git add -A
 # git status #Make sure all the new files are tracked AND on stage for being committed!!
