@@ -3,6 +3,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
 
+#commands
+# cd /root/{YOURPOJECTNAME}
+# git add -A
+# git status #Make sure all the new files are tracked AND on stage for being committed!!
+# git commit -m "Init"
+# git push
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4'
 # Use Puma as the app server
@@ -14,6 +22,8 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
+gem 'friendly_id', '~> 5.4.0'
+gem 'nokogiri', '>= 1.5.9'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -27,7 +37,6 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'bootstrap', '~> 5.0.0.beta2'
 gem 'jquery-rails'
-gem 'friendly_id', '~> 5.4.0'
 
 group :production do
   gem 'pg', '~> 0.21' # for Heroku deployment

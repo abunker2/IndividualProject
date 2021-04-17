@@ -1,0 +1,41 @@
+<% provide(:description, 'Home') %>
+<p id="notice"><%= notice %></p>
+
+<h1>Projects home</h1>
+<hr>
+
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Name</th>
+      <th>Language</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Repourl</th>
+      <th>Slug</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projectlists.each do |projectlist| %>
+      <tr>
+        <td><%= projectlist.username %></td>
+        <td><%= projectlist.name %></td>
+        <td><%= projectlist.language %></td>
+        <td><%= projectlist.description %></td>
+        <td><%= projectlist.status %></td>
+        <td><%= projectlist.RepoURL %></td>
+        <td><%= projectlist.slug %></td>
+        <td><%= link_to 'View project', projectlist %></td>
+        <td><%= link_to 'Edit project', edit_projectlist_path(projectlist) %></td>
+        <td><%= link_to 'Delete project', projectlist, method: :delete, data: { confirm: 'This action will remove the post and is irreversible. Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Projectlist', new_projectlist_path %>

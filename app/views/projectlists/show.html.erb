@@ -1,0 +1,41 @@
+<% provide(:description, @projectlist.description) %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @projectlist.username %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @projectlist.name %>
+</p>
+
+<p>
+  <strong>Language:</strong>
+  <%= @projectlist.language %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @projectlist.description %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @projectlist.status %>
+</p>
+
+<p>
+  <strong>Repourl:</strong>
+  <%= @projectlist.RepoURL %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @projectlist.slug %>
+</p>
+
+<%= link_to 'Edit', edit_projectlist_path(@projectlist) %> |
+<%= link_to 'Back', projectlists_path %>

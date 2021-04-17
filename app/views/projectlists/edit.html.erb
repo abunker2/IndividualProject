@@ -1,0 +1,9 @@
+<% provide(:description, 'Edit project info...') %>
+
+<h1>Edit your project info below</h1>
+<hr>
+
+<%= render 'form', projectlist: @projectlist %>
+
+<%= link_to 'Show', @projectlist %> |
+<%= link_to 'Back', projectlists_path %>
