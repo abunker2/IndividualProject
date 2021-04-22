@@ -38,6 +38,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 5.0.0.beta2'
 gem 'jquery-rails'
 gem 'simplecov', require: false, group: :test
+gem 'mini_racer'
 
 group :production do
   gem 'pg', '~> 0.21' # for Heroku deployment
