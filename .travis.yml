@@ -13,6 +13,6 @@ script:
  
  deploy:
   provider: heroku
-  api_key: d7a4a675-b01c-4db5-b1e2-851351415910
+  api_key: 5e392cae-7e69-4c9e-ab22-daaea45f7e42
   app: IndividualProject
   run: "rake db:migrate"
