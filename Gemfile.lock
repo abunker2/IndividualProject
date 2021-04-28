@@ -194,7 +194,6 @@ GEM
       rspec-mocks (~> 3.9.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.4)
->>>>>>> 10bbf59c71fc2c810a08b3a9859c39dc7048e5f3
     ruby_dep (1.5.0)
     rubyzip (2.3.0)
     sass (3.7.4)
