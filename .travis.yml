@@ -14,5 +14,5 @@ script:
  deploy:
   provider: heroku
   api_key: 5e392cae-7e69-4c9e-ab22-daaea45f7e42
-  app: IndividualProject
+  app: aqueous-shore-09227
   run: "rake db:migrate"
