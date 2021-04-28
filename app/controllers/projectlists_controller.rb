@@ -1,5 +1,6 @@
 class ProjectlistsController < ApplicationController
   before_action :set_projectlist, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /projectlists or /projectlists.json
   def index
