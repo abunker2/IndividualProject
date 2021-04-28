@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.feature "Projects", type: :feature do
-  sign_in users(:abunker2@uccs.edu), scope: :admin
 
   #Unit test 1: Checking if required name is set
   context "Create new project" do
