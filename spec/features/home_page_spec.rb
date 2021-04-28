@@ -1,8 +1,10 @@
 require "rails_helper"
 
-RSpec.feature "Visiting the homepage", type: :feature do
-  scenario "The visitor should see projects" do
+RSpec.feature "Visiting the login page", type: :feature do
+
+  scenario "The visitor should see login page" do
     visit root_path
-    expect(page).to have_text("Projects home")
+    expect(page).to have_text("Log in")
   end
+
 end
