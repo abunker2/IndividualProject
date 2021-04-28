@@ -1,4 +1,5 @@
-class ProjectlistsController < ApplicationController
+class ProjectlistsController < ActionController::TestCase
+  include Devise::Test::IntegrationHelpers
   before_action :set_projectlist, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
 
