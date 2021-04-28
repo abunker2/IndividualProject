@@ -80,17 +80,14 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.8)
     crass (1.0.6)
-<<<<<<< HEAD
     devise (4.7.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-=======
     diff-lcs (1.4.4)
     docile (1.3.5)
->>>>>>> 10bbf59c71fc2c810a08b3a9859c39dc7048e5f3
     erubi (1.10.0)
     execjs (2.7.0)
     ffi (1.15.0)
