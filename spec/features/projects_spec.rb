@@ -5,6 +5,7 @@ RSpec.feature "Projects", type: :feature do
   #Unit test 1: Checking if required name is set
   context "Create new project" do
     before(:each) do
+      sign_in @user, scope: :admin
       visit new_projectlist_path
       within("form") do
         fill_in "name", with: ""
