@@ -1,9 +1,63 @@
+<style>
+.alert {
+     display: none;
+}
+.notice {
+     display: none;
+}
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<a class="navbar-brand" href="/">&nbsp;Homepage</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarText">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a class="nav-link" href="/projectlists">Projects portal</a>
+    </li>
+    <% if !user_signed_in? %>
+    <li class="nav-item">
+      <a class="nav-link" href="/users/sign_in">Sign in</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/users/sign_up">Sign up</a>
+    </li>
+    <% end %>
+    <% if user_signed_in? %>
+    <li class="nav-item">
+    <a class="nav-link" href="/users/logout">Logout</a>
+    </li>
+    <% end %>
+  </ul>
+</div>
+</nav>
+
+<div class="jumbotron" style="background:#e9ecef;">
+  <br>
+  <h1 class="display-4"><center>Editing project created by: <%= @projectlist.username %></center></h1>
+  <hr class="my-4">
+  <p><center>Modify the project details below.</center></p><br>
+</div>
 <% provide(:description, 'Edit project info...') %>
 
-<h1>Edit your project info below</h1>
-<hr>
+<br>
+<center>
+<aside class="col-sm-4">
+<div class="card">
+<article class="card-body">
+	<h4 class="card-title text-center mb-4 mt-1"><center><h2>Project details</h2></center></h4>
+	<hr>
+	<p class="text-success text-center">Once complete, press the update button to save your changes.</p>
+  <%= render 'form', projectlist: @projectlist %>
+</article>
+</div> 
+</aside> 
 
-<%= render 'form', projectlist: @projectlist %>
 
 <%= link_to 'Show', @projectlist %> |
 <%= link_to 'Back', projectlists_path %>
+<div class="navbar fixed-bottom bg-dark">
+<center><a class="nav-link" href="https://aqueous-shore-09227.herokuapp.com/">©2021 https://aqueous-shore-09227.herokuapp.com | All rights reserved.</a></center>
+</div>

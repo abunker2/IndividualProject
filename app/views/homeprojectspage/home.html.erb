@@ -39,11 +39,12 @@
   <h1 class="display-4"><center>Welcome to the Projects Portal</center></h1>
   <p class="lead"><center>This will be your one-stop shop for displaying information about your portfolio to the world.</center></p>
   <hr class="my-4">
-  <p><center>You are logged into your account. Therefore you can view, edit, and delete projects via the table below.</center></p><br>
+  <% if !user_signed_in? %>
+  <p><center>Feel free to browse the table below which has currently posted projects, or <a href="/users/sign_up">sign up</a> to add to the growing collection!</center></p><br>
+  <% else %>
+  <p><center>You are logged into your account. Therefore you can visit the <a href="/projectlists">projects portal</a> to gain further project access.</center></p><br>
+  <% end %>
 </div>
-
-<% provide(:description, 'Home') %>
-
 <center>
 <% @projectlists.all.each do |projectlist| %>
   <br>
@@ -54,15 +55,17 @@
     <hr>
     <p class="card-text">          
     <tr>
-    <br><td><b>Author:</b> <%= projectlist.name %></td> 
+    <br><td><b>Author:</b> <%= projectlist.name %></td>
     <br><td><b>Language(s):</b> <%= projectlist.language %></td>
     <br><td><b>Description:</b> <%= projectlist.description %></td>
     <br><td><b>Status:</b> <%= projectlist.status %></td>
     <br><td><b>Repo URL:</b> <%= projectlist.RepoURL %></td>
     <br></tr></p>
-    <td><%= link_to 'View project', projectlist %></td> | 
-    <td><%= link_to 'Edit project', edit_projectlist_path(projectlist) %></td> | 
-    <td><%= link_to 'Delete project', projectlist, method: :delete, data: { confirm: 'This action will remove the post and is irreversible. Are you sure?' } %></td>
+    <% if !user_signed_in? %>
+    <a href="/users/sign_in" class="btn btn-primary">Sign up or sign in to view the detailed page</a>
+    <% else %>
+    <a href="/projectlists" class="btn btn-primary">Visit the portal for modifications</a>
+    <% end %>
   </div>
 </div>
 </div>

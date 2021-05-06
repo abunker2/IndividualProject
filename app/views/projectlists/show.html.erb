@@ -1,41 +1,81 @@
+<style>
+.alert {
+     display: none;
+}
+.notice {
+     display: none;
+}
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<a class="navbar-brand" href="/">&nbsp;Homepage</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarText">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a class="nav-link" href="/projectlists">Projects portal</a>
+    </li>
+    <% if !user_signed_in? %>
+    <li class="nav-item">
+      <a class="nav-link" href="/users/sign_in">Sign in</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/users/sign_up">Sign up</a>
+    </li>
+    <% end %>
+    <% if user_signed_in? %>
+    <li class="nav-item">
+    <a class="nav-link" href="/users/logout">Logout</a>
+    </li>
+    <% end %>
+  </ul>
+</div>
+</nav>
+
+<div class="jumbotron" style="background:#e9ecef;">
+  <br>
+  <h1 class="display-4"><center>This project was created by: <%= @projectlist.username %></center></h1>
+  <hr class="my-4">
+  <p><center>Project details will be listed below.</center></p><br>
+</div>
+
 <% provide(:description, @projectlist.description) %>
+<center>
+<br>
+<div class="card text-white bg-dark mb-3" style="max-width: 90rem;">
+  <div class="card-header">Project author: <%= @projectlist.name %></div>
+  <div class="card-body">
+    <p class="card-text">
+    <table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Language</th>
+      <th scope="col">Description</th>
+      <th scope="col">Status</th>
+      <th scope="col">RepoURL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><%= @projectlist.language %></th>
+      <td><%= @projectlist.description %></td>
+      <td><%= @projectlist.status %></td>
+      <td><%= @projectlist.RepoURL %></td>
+    </tr>
+  </tbody>
+</table>
+    </p>
+  </div>
+</div>
+</center>
 
-<p id="notice"><%= notice %></p>
+<h2 class="display-6"><center>Would you like to <%= link_to 'edit', edit_projectlist_path(@projectlist) %> this project?
 
-<p>
-  <strong>Username:</strong>
-  <%= @projectlist.username %>
-</p>
+If not, <%= link_to 'click here to return.', projectlists_path %></center></h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @projectlist.name %>
-</p>
 
-<p>
-  <strong>Language:</strong>
-  <%= @projectlist.language %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @projectlist.description %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @projectlist.status %>
-</p>
-
-<p>
-  <strong>Repourl:</strong>
-  <%= @projectlist.RepoURL %>
-</p>
-
-<p>
-  <strong>Slug:</strong>
-  <%= @projectlist.slug %>
-</p>
-
-<%= link_to 'Edit', edit_projectlist_path(@projectlist) %> |
-<%= link_to 'Back', projectlists_path %>
+<div class="navbar fixed-bottom bg-dark">
+<center><a class="nav-link" href="https://aqueous-shore-09227.herokuapp.com/">©2021 https://aqueous-shore-09227.herokuapp.com | All rights reserved.</a></center>
+</div>

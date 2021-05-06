@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
+  get 'homeprojectspage/home'
+  get 'homeprojectspage/notloggedinprojectsview'
+  devise_for :users #This needs to be the path of whatever yours is called
   resources :projectlists
-  #root to: 'users/sign_in#index'
+  root to: 'homeprojectspage#home'
   devise_scope :user do
     root :to => 'devise/sessions#new'
+    get 'users/logout' => 'devise/sessions#destroy'
   end
   resources :posts
   resources :users

@@ -33,22 +33,47 @@
   </ul>
 </div>
 </nav>
-<% provide(:description, 'New Project...') %>
 
-<br>
-<center>
-<aside class="col-sm-4">
-<div class="card">
-<article class="card-body">
-  <h4 class="card-title text-center mb-4 mt-1"><center><h2>New project</h2></center></h4>
-  <%= link_to 'Click here to visit the projects portal if you don\'t wish to add a new project.', projectlists_path %>
-	<hr>
-	<p class="text-success text-center">Enter your project details to add it to our database!</p>
-  <%= render 'form', projectlist: @projectlist %>
-</article>
-</div> 
-</aside>
+<% provide(:description, @projectlist.description) %>
 
+
+<p>
+  <strong>Username:</strong>
+  <%= @projectlist.username %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @projectlist.name %>
+</p>
+
+<p>
+  <strong>Language:</strong>
+  <%= @projectlist.language %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @projectlist.description %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @projectlist.status %>
+</p>
+
+<p>
+  <strong>Repourl:</strong>
+  <%= @projectlist.RepoURL %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @projectlist.slug %>
+</p>
+
+<%= link_to 'Edit', edit_projectlist_path(@projectlist) %> |
+<%= link_to 'Back', projectlists_path %>
 
 <div class="navbar fixed-bottom bg-dark">
 <center><a class="nav-link" href="https://aqueous-shore-09227.herokuapp.com/">©2021 https://aqueous-shore-09227.herokuapp.com | All rights reserved.</a></center>
