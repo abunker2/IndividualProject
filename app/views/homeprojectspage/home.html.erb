@@ -36,14 +36,18 @@
 
 <div class="jumbotron" style="background:#e9ecef;">
   <br>
-  <h1 class="display-4"><center>Welcome to the Projects Portal</center></h1>
+  <h1 class="display-4"><center>Welcome to the portfolio center.</center></h1>
   <p class="lead"><center>This will be your one-stop shop for displaying information about your portfolio to the world.</center></p>
   <hr class="my-4">
   <% if !user_signed_in? %>
   <p><center>Feel free to browse the table below which has currently posted projects, or <a href="/users/sign_up">sign up</a> to add to the growing collection!</center></p><br>
   <% else %>
-  <p><center>You are logged into your account. Therefore you can visit the <a href="/projectlists">projects portal</a> to gain further project access.</center></p><br>
+  <p><center>You are logged into your account. Therefore you can visit the <a href="/projectlists">projects portal</a> to gain further project access.</center></p>
   <% end %>
+  <hr>
+  <p><center>This portfolio was developed in Ruby, integrated with Heroku. It was developed by Anthony B. over the course of a semester to showcase student projects.<br>
+  This portfolio had many different iteration requirements, and the most important is the project views. I decided to limit the full project view to logged in accounts only<br>
+  while providing not logged in users with a shortened portfolio view which you can see in the table below. Come register an account with us and see the full experience in action. </center></p><br>
 </div>
 <center>
 <% @projectlists.all.each do |projectlist| %>
@@ -75,5 +79,5 @@
 <p><p><p>
 <%= link_to 'New Projectlist', new_projectlist_path %>
 <div class="navbar fixed-bottom bg-dark">
-<center><a class="nav-link" href="https://aqueous-shore-09227.herokuapp.com/">©2021 https://aqueous-shore-09227.herokuapp.com | All rights reserved.</a></center>
+<center><a class="nav-link" href="">©2021 Portfolio Heroku App | All rights reserved.</a></center>
 </div>
