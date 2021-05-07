@@ -44,6 +44,10 @@
 
 <% provide(:description, 'Home') %>
 
+<h1 class="display-6"><center><%= link_to 'Add new project', new_projectlist_path %>
+</center></h1>
+<hr>
+
 <center>
 <% @projectlists.all.each do |projectlist| %>
   <br>
@@ -70,7 +74,6 @@
 </center>
 
 <p><p><p>
-<%= link_to 'New Projectlist', new_projectlist_path %>
 <div class="navbar fixed-bottom bg-dark">
 <center><a class="nav-link" href="">©2021 Portfolio Heroku App | All rights reserved.</a></center>
 </div>
